@@ -1,0 +1,10 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#@ output extension=".js" #>
+<#@ assembly name="$(TargetPath)" #>
+<#@ import namespace="solomon87.DotNetAngularTemplateCacheGenerator" #>
+// This script is auto-generated. Do not modify directly, it will get over-written
+"use strict";
+var module = angular.module("app.templates",[]);
+module.run(["$templateCache", function($templateCache){
+<# WriteLine(TemplateCacheEncoder.GenerateTemplateCache(this.Host.ResolvePath(""))); #>
+}]);
